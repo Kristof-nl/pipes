@@ -1,0 +1,40 @@
+<div class="container mx-auto col-8 p-3">
+<div class="row border border-primary col-12 justify-content-center">
+    <h3 class="text-center mt-3">Payment form</h3>
+    <hr class="w-75 text-primary">
+        <div class="col-5 me-4 ">
+            <label class="form-label fw-bold">Receiver Name</label>
+            <input (input)="onNameChange($any($event.target).value)" class="form-control mb-4">
+        </div>
+        <div class="col-3 ">
+            <p class="fw-bold">Receiver Name</p>
+            <p>{{ name | titlecase }}</p>
+        </div>
+        <div class="col-5 me-4 ">
+            <label class="form-label fw-bold">Paymnet date</label>
+            <input type="date" (input)="onDateChange($any($event.target).value)" class="form-control mb-4">
+        </div>
+        <div class="col-3 ">
+            <p class="fw-bold">Payment Date </p>
+            <p> {{ date | date: 'fullDate'   }}</p>
+        </div>
+        <div class="col-5 me-4 ">
+            <label class="form-label fw-bold">Receiver Name</label>
+            <input class="form-control mb-4" (input)="onAmountChange($any($event.target).value)">
+        </div>
+        <div class="col-3 mb-3">
+            <p class="fw-bold">Amount</p>
+            <p>{{ amount | currency: 'EUR' }}</p>
+        </div>
+        <div class="col-5 me-4 ">
+            <label class="form-label fw-bold">Height</label>
+            <input class="form-control mb-4" (input)="onHeightChange($any($event.target).value)">
+        </div>
+        <div class="col-3 mb-3">
+            <p class="fw-bold">Height</p>
+            <p>{{ height | number: '1.1-2' }}</p>
+        </div>
+    </div>
+</div>
+
+{{ car | json }}
