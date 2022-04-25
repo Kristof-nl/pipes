@@ -34,7 +34,13 @@
             <p class="fw-bold">Height</p>
             <p>{{ height | number: '1.1-2' }}</p>
         </div>
+        <div class="col-5 me-4 ">
+            <label class="form-label fw-bold">Miles</label>
+            <input class="form-control mb-4" (input)="onMilesChange($any($event.target).value)">
+        </div>
+        <div class="col-3 mb-3">
+            <p class="fw-bold">Kilometers</p>
+            <p>{{ miles | convert: 'km' | number: '1.0-2' }}</p>
+        </div>
     </div>
 </div>
-
-{{ car | json }}
